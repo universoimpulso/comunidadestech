@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
-import { Field, ErrorMessage } from 'formik';
+
 import slug from 'slug';
-import { api, setHeader } from '../../utils/axios';
 import Select from 'react-select';
+import { Field, ErrorMessage } from 'formik';
 import makeAnimated from 'react-select/animated';
+
+// import CustomLogo from './customLogo';
+import { api, setHeader } from '../../utils/axios';
 import { reactSelectStyle } from './reactSelectStyle';
 import styles from './styles';
-
-import CustomLogo from './customLogo';
-
 import {
   CATEGORIES,
   TAGS,
