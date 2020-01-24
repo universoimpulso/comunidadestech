@@ -1,5 +1,5 @@
 import express from 'express';
-// import morgan from 'morgan';
+import morgan from 'morgan';
 import path from 'path';
 import next from 'next';
 import dotenv from 'dotenv';
@@ -47,7 +47,7 @@ app
 
     server.use(express.json());
     server.use(express.urlencoded({ extended: true }));
-    // server.use(morgan('dev'));
+    server.use(morgan('dev'));
     server.use(passport.initialize());
     server.use(passport.session());
     server.use('/files', express.static(localStorage));

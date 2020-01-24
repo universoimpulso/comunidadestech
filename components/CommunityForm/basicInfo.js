@@ -5,7 +5,7 @@ import Select from 'react-select';
 import { Field, ErrorMessage } from 'formik';
 import makeAnimated from 'react-select/animated';
 
-// import CustomLogo from './customLogo';
+import CustomLogo from './customLogo';
 import { api, setHeader } from '../../utils/axios';
 import { reactSelectStyle } from './reactSelectStyle';
 import styles from './styles';
@@ -203,7 +203,7 @@ export default function BasicInfos({
           </ErrorMessage>
         </label>
       )}
-      {/* <label>Logo da comunidade *</label>
+      <label>Logo da comunidade *</label>
       <div className="input-wrapper">
         <CustomLogo
           name="logo"
@@ -212,7 +212,7 @@ export default function BasicInfos({
             currentLogo: initialValues.logo,
           }}
         />
-      </div> */}
+      </div>
       <label>
         Descrição *
         <div className="input-wrapper">
