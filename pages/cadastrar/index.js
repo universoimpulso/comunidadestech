@@ -13,7 +13,7 @@ const RegisterCommunity = ({ credentials }) => {
 
   const getInitialValues = () => {
     const { _id, name, email } = credentials;
-    const logo = `${process.env.DEFAULT_LOGO}`;
+    // const logo = `${process.env.DEFAULT_LOGO}`;
     return {
       name: '',
       slug: 'comunidades.tech/c/',
@@ -33,7 +33,7 @@ const RegisterCommunity = ({ credentials }) => {
         name: '',
       },
       members: '',
-      logo,
+      logo: 'logo',
       creator: {
         _id,
         name,
@@ -61,7 +61,7 @@ const RegisterCommunity = ({ credentials }) => {
       <div className="hero-body">
         <div className="columns is-centered">
           <div className="column">
-            <div
+            <CommunityForm
               credentials={credentials}
               service={postCommunity}
               loading={loading}
