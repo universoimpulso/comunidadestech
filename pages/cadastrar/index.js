@@ -61,7 +61,7 @@ const RegisterCommunity = ({ credentials }) => {
       <div className="hero-body">
         <div className="columns is-centered">
           <div className="column">
-            <CommunityForm
+            <div
               credentials={credentials}
               service={postCommunity}
               loading={loading}
