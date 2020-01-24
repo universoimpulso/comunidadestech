@@ -3,8 +3,9 @@ import multerConfig from '../config/multer';
 
 class LogoController {
   async upload(req, res) {
-    const { DEFAULT_LOGO, NODE_ENV, APP_URL } = process.env;
-    const isDev = NODE_ENV === 'development';
+    const { DEFAULT_LOGO } = process.env;
+    // const { DEFAULT_LOGO, NODE_ENV, APP_URL } = process.env;
+    // const isDev = NODE_ENV === 'development';
     const upload = multer(multerConfig).single('file');
 
     upload(req, res, function(err) {
@@ -17,7 +18,8 @@ class LogoController {
 
       const response = {
         success: true,
-        logo: isDev ? `${APP_URL}/files/${req.file.key}` : req.file.location,
+        // logo: isDev ? `${APP_URL}/files/${req.file.key}` : req.file.location,
+        logo: req.file.location,
       };
       return res.json(response);
     });

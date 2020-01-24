@@ -7,15 +7,15 @@ const { NODE_ENV, BUCKET_NAME } = process.env;
 const isDev = NODE_ENV === 'development';
 
 const storageTypes = {
-  development: multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, path.resolve(__dirname, '..', '..', 'temp', 'uploads'));
-    },
-    filename: (req, file, cb) => {
-      file.key = `${req.params.slug}.${file.mimetype.split('/')[1]}`;
-      cb(null, file.key);
-    },
-  }),
+  // development: multer.diskStorage({
+  //   destination: (req, file, cb) => {
+  //     cb(null, path.resolve(__dirname, '..', '..', 'temp', 'uploads'));
+  //   },
+  //   filename: (req, file, cb) => {
+  //     file.key = `${req.params.slug}.${file.mimetype.split('/')[1]}`;
+  //     cb(null, file.key);
+  //   },
+  // }),
   production: multerS3({
     s3: new aws.S3(),
     bucket: BUCKET_NAME,
@@ -30,7 +30,8 @@ const storageTypes = {
 
 export default {
   dest: path.resolve(__dirname, '..', '..', 'temp', 'uploads'),
-  storage: storageTypes[isDev ? 'development' : 'production'],
+  // storage: storageTypes[isDev ? 'development' : 'production'],
+  storage: storageTypes['production'],
   limits: {
     fileSize: 2 * 1024 * 1024,
   },
