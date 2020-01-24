@@ -50,7 +50,7 @@ app
     server.use(morgan('dev'));
     server.use(passport.initialize());
     server.use(passport.session());
-    server.use('/files', express.static(localStorage));
+    // server.use('/files', express.static(localStorage));
 
     PassportConfig.google();
     PassportConfig.linkedin();
