@@ -12,6 +12,9 @@
     "prettier": "prettier --write '**/*.js{x,}'",
     "test": "jest --watchAll"
   },
+  "engines": {
+    "node": "10.15.2"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn build"
