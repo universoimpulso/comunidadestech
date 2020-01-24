@@ -9,53 +9,53 @@ import styles from './styles';
 import CommunityForm from '../../components/CommunityForm';
 
 const RegisterCommunity = ({ credentials }) => {
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  const getInitialValues = () => {
-    const { _id, name, email } = credentials;
-    // const logo = `${process.env.DEFAULT_LOGO}`;
-    return {
-      name: '',
-      slug: 'comunidades.tech/c/',
-      model: 'online',
-      location: {
-        country: '',
-        state: '',
-        city: '',
-      },
-      links: [{ type: 'url', url: '' }],
-      description: '',
-      category: '',
-      type: '',
-      tags: '',
-      globalProgram: {
-        isParticipant: false,
-        name: '',
-      },
-      members: '',
-      logo: 'logo',
-      creator: {
-        _id,
-        name,
-        email,
-        rocketChat: '',
-      },
-      owner: '',
-      managers: [],
-    };
-  };
+  // const getInitialValues = () => {
+  //   const { _id, name, email } = credentials;
+  //   const logo = `${process.env.DEFAULT_LOGO}`;
+  //   return {
+  //     name: '',
+  //     slug: 'comunidades.tech/c/',
+  //     model: 'online',
+  //     location: {
+  //       country: '',
+  //       state: '',
+  //       city: '',
+  //     },
+  //     links: [{ type: 'url', url: '' }],
+  //     description: '',
+  //     category: '',
+  //     type: '',
+  //     tags: '',
+  //     globalProgram: {
+  //       isParticipant: false,
+  //       name: '',
+  //     },
+  //     members: '',
+  //     logo,
+  //     creator: {
+  //       _id,
+  //       name,
+  //       email,
+  //       rocketChat: '',
+  //     },
+  //     owner: '',
+  //     managers: [],
+  //   };
+  // };
 
-  const postCommunity = async (community) => {
-    setLoading(true);
-    setHeader(credentials);
-    await api.post('/community/store', community);
-    toast.success(
-      `Comunidade cadastrada com sucesso!\n
-    Em breve ela será publicada.`
-    );
-    Router.push('/');
-  };
-
+  // const postCommunity = async (community) => {
+  //   setLoading(true);
+  //   setHeader(credentials);
+  //   await api.post('/community/store', community);
+  //   toast.success(
+  //     `Comunidade cadastrada com sucesso!\n
+  //   Em breve ela será publicada.`
+  //   );
+  //   Router.push('/');
+  // };
+  return <>oi</>;
   return (
     <div className="container">
       <div className="hero-body">
@@ -77,13 +77,13 @@ const RegisterCommunity = ({ credentials }) => {
   );
 };
 
-RegisterCommunity.getInitialProps = async (ctx) => {
-  const credentials = cookies(ctx).ctech_credentials || {};
-  if (!credentials.token) {
-    ctx.res.writeHead(302, {
-      Location: '/',
-    });
-    ctx.res.end();
-  }
-};
+// RegisterCommunity.getInitialProps = async (ctx) => {
+//   const credentials = cookies(ctx).ctech_credentials || {};
+//   if (!credentials.token) {
+//     ctx.res.writeHead(302, {
+//       Location: '/',
+//     });
+//     ctx.res.end();
+//   }
+// };
 export default RegisterCommunity;
