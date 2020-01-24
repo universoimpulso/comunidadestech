@@ -203,7 +203,7 @@ export default function BasicInfos({
           </ErrorMessage>
         </label>
       )}
-      <label>Logo da comunidade *</label>
+      {/* <label>Logo da comunidade *</label>
       <div className="input-wrapper">
         <CustomLogo
           name="logo"
@@ -212,7 +212,7 @@ export default function BasicInfos({
             currentLogo: initialValues.logo,
           }}
         />
-      </div>
+      </div> */}
       <label>
         Descrição *
         <div className="input-wrapper">
