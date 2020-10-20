@@ -46,7 +46,7 @@
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
     "passport-linkedin-oauth2": "^2.0.0",
-    "pretty-error": "^2.1.1",
+    "pretty-error": "^2.1.2",
     "prop-types": "^15.7.2",
     "query-string": "^6.13.5",
     "react": "^16.13.1",
